@@ -7,7 +7,7 @@ include "root" {
 }
 
 inputs = {
-    cluster_name                   = "mtl-exam"
+    cluster_name                   = "mtl-exam-01"
     cluster_version                = "1.27"
     cluster_endpoint_public_access = true
 
@@ -16,12 +16,24 @@ inputs = {
 
     eks_managed_node_groups = {
         default = {
-        min_size     = 1
-        max_size     = 2
-        desired_size = 1
+          min_size     = 1
+          max_size     = 2
+          desired_size = 1
 
-        instance_types = ["t3.micro"]
-        capacity_type  = "SPOT"
+          instance_types = ["t3.micro"]
+          capacity_type  = "SPOT"
+        }
+
+        hello_node_group = {
+          min_size     = 1
+          max_size     = 2
+          desired_size = 1
+
+          instance_types = ["t3.micro"]
+          capacity_type  = "SPOT"
+          labels = {
+              app = "hello"
+          }
         }
     }
 
