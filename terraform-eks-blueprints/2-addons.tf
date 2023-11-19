@@ -51,7 +51,7 @@ module "eks_blueprints_addons" {
   # enable_argo_events                     = true
   # enable_argo_rollouts                   = true
   # enable_argo_workflows                  = true
-  # enable_cluster_autoscaler              = true
+  enable_cluster_autoscaler              = true
   # enable_cluster_proportional_autoscaler = true
 
   ## Pass in any number of Helm charts to be created for those that are not natively supported
